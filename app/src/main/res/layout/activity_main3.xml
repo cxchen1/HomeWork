@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+<include layout="@layout/activity_main3_top"/>
+
+
+
+    --中间滑动按钮
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <!-- ImageButton没加android:clickable="false"时，点击下方的ImageBuutton不会改变页面，点击TextView才会改变页面，这是因为每个tab是一个LinearLayout，每个LinearLayout都有一个ImageButton，当点击ImageButton位置时，点击事件首先会到LinearLayout上，LinearLayout会去判断，发现内部有一个ImageButton可以解决点击事件，所以就把点击事件交给ImageButton，而ImageButton又没有写点击事件，所以点击事件就失效了。-->
+
+        <LinearLayout
+            android:id="@+id/tab_bt1"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/tab_bt11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:text="好友"
+                android:clickable="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_bt2"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/tab_bt22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:text="分组"
+                android:clickable="false"/>
+        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tab_bt3"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/tab_bt33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:text="群聊"
+                    android:clickable="false"/>
+            </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_bt4"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/tab_bt44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:text="设备"
+                android:clickable="false"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/id_viewpager"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp">
+    </androidx.viewpager.widget.ViewPager>
+
+
+
+<include layout="@layout/activity_main3_bottom"/>
+
+</LinearLayout>
